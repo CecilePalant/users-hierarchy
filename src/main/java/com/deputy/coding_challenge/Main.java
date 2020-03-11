@@ -11,14 +11,14 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        //load resources
+        //load json file resources
         List<Role> roles = ResourceManager.getRoles();
         List<User> users = ResourceManager.getUsers();
 
         //set up subordinate manager with objects
-        SubordinateManager subordinateManager = new SubordinateManager();
-        subordinateManager.setRoles(roles);
-        subordinateManager.setUsers(users);
+        SubordinateManager subordinateManager = new SubordinateManager(roles, users);
+//        subordinateManager.setRoles(roles);
+//        subordinateManager.setUsers(users);
 
         int userId = 3;
         List<User> subordinates = subordinateManager.getSubordinates(userId);
